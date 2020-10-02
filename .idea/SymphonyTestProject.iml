@@ -10,6 +10,9 @@
   <component name="PackageRequirementsSettings">
     <option name="requirementsPath" value="" />
   </component>
+  <component name="PyBDDFrameworkConfig">
+    <option name="preferedFrameworkName" value="pytest-bdd" />
+  </component>
   <component name="TestRunnerService">
     <option name="PROJECT_TEST_RUNNER" value="pytest" />
   </component>
