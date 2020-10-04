@@ -1,7 +1,7 @@
 from SymphonyTest.PageObjects.forgotPasswordPageObjects import forgotPasswordPageObjects
 from SymphonyTest.Support.errorMessages import errorMessages
 from SymphonyTest.Support.genericSupportModule import visualdelay
-
+from selenium.common.exceptions import NoSuchElementException
 
 
 class ForgotPassword():
@@ -21,7 +21,7 @@ class ForgotPassword():
         ForgotLinkXpathElement = self.driver.find_elements_by_xpath(self.forgotPassword)
         ForgotLinkXpathElement[0].click()
 
-    def enterCaptchaInfo(self,email):
+    def enterCaptchaInfo(self, email):
         recoverEmail = self.driver.find_elements_by_xpath(self.recoverEmail)
         self.driver.implicitly_wait(4)
         recoverEmail[0].send_keys(email)
@@ -34,5 +34,13 @@ class ForgotPassword():
         visualdelay()
         self.driver.find_element_by_id(self.captchaAudio).click()
         visualdelay()
-        captchaError = self.driver.find_elements_by_xpath(self.captchaError)[0].text
-        assert captchaError == errorMessages.captchaError
+        if self.check_exists_by_xpath():
+            captchaError = self.driver.find_elements_by_xpath(self.captchaError)[0].text
+            assert captchaError == errorMessages.captchaError
+
+    def check_exists_by_xpath(self):
+        try:
+            self.driver.find_elements_by_xpath(self.captchaError)[0]
+        except NoSuchElementException:
+            return False
+        return True

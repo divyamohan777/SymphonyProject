@@ -5,7 +5,6 @@ from time import sleep
 
 
 class SignUp():
-
     def __init__(self, driver):
         self.driver = driver
         self.signUpClick = signUpPageObjects.signUplinkXpath
@@ -19,8 +18,9 @@ class SignUp():
 
     def clickonSignUp(self, firstname, lastname, email, password):
         signUpClickElement = self.driver.find_elements_by_xpath(self.signUpClick)
+        self.driver.implicitly_wait(2)
         signUpClickElement[0].click()
-        sleep(1)
+        self.driver.implicitly_wait(2)
         firstNameelement = self.driver.find_elements_by_xpath(self.firstName)
         firstNameelement[0].send_keys(firstname)
         lastNameElement = self.driver.find_elements_by_xpath(self.lastName)

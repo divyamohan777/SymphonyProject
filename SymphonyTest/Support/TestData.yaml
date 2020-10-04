@@ -1,0 +1,11 @@
+ValidLogin:
+  ValidUserName : 'divyamohan88@gmail.com'
+  ValidPassword :  'Pa55w@rd'
+InvalidLogin:
+  InvalidUserName : 'abc@abc123.com'
+  InvalidPassword : 'abc'
+
+FirstName: 'abc'
+LastName: 'abc'
+SignUpexisitingEmail: 'divyamohan88@gmail.com'
+Password: 'Pa55w@rd'
