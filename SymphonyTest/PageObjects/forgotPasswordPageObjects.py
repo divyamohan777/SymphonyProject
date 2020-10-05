@@ -8,3 +8,5 @@ class forgotPasswordPageObjects():
     captchaframeXpath = "//iframe[@title='recaptcha challenge']"
     captchaaudioButton = "recaptcha-audio-button"
     captchaAudioError = "/html/body/div/div/div[1]/div[2]/div"
+    recoversubmit = "recover-submit"
+    recovernoemailerror = "/html/body/div[1]"

@@ -16,12 +16,16 @@ class ForgotPassword():
         self.captchaFrameclick = forgotPasswordPageObjects.captchaframeXpath
         self.captchaAudio = forgotPasswordPageObjects.captchaaudioButton
         self.captchaError = forgotPasswordPageObjects.captchaAudioError
+        self.recoverbuttomelement = forgotPasswordPageObjects.recoversubmit
+        self.recovererrormessageelement = forgotPasswordPageObjects.recovernoemailerror
 
     def clickonForgotPassword(self):
+        self.driver.implicitly_wait(4)
         ForgotLinkXpathElement = self.driver.find_elements_by_xpath(self.forgotPassword)
         ForgotLinkXpathElement[0].click()
 
     def enterCaptchaInfo(self, email):
+        self.clickonForgotPassword()
         recoverEmail = self.driver.find_elements_by_xpath(self.recoverEmail)
         self.driver.implicitly_wait(4)
         recoverEmail[0].send_keys(email)
@@ -37,6 +41,21 @@ class ForgotPassword():
         if self.check_exists_by_xpath():
             captchaError = self.driver.find_elements_by_xpath(self.captchaError)[0].text
             assert captchaError == errorMessages.captchaError
+
+    def noEmailForgotPassword(self):
+        self.clickonForgotPassword()
+        recoverEmail = self.driver.find_elements_by_xpath(self.recoverEmail)
+        self.driver.implicitly_wait(4)
+        recoverEmail[0].send_keys("")
+        visualdelay()
+        recoverEmailButton = self.driver.find_element_by_name(self.recoverbuttomelement)
+        self.driver.implicitly_wait(4)
+        recoverEmailButton.click()
+        self.driver.implicitly_wait(2)
+        noemailerrorelement = self.driver.find_elements_by_xpath(self.recovererrormessageelement)
+        assert errorMessages.recoverPasswordErrorMessage == noemailerrorelement[0].text
+
+
 
     def check_exists_by_xpath(self):
         try:

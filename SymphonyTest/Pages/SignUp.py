@@ -3,7 +3,6 @@ from SymphonyTest.Support.errorMessages import errorMessages
 from time import sleep
 
 
-
 class SignUp():
     def __init__(self, driver):
         self.driver = driver
@@ -29,11 +28,11 @@ class SignUp():
         emailAddresselement[0].send_keys(email)
         signUpPasswordElement = self.driver.find_elements_by_xpath(self.signUpPassword)
         signUpPasswordElement[0].send_keys(password)
-        self.exisitingsignUpbuttonclick()
-
-    def exisitingsignUpbuttonclick(self):
         activesignUpbutton = self.driver.find_elements_by_xpath(self.activesignUpbutton)
         activesignUpbutton[0].click()
+
+    def exisitingsignUpbuttonclick(self, firstname, lastname, email, password):
+        self.clickonSignUp(firstname, lastname, email, password)
         self.driver.implicitly_wait(2)
         signupError = self.driver.find_elements_by_xpath(self.existingSignUperror)
         message = signupError[0].text
@@ -42,3 +41,8 @@ class SignUp():
         assert message == errmessage
         signclosebutton = self.driver.find_elements_by_xpath(self.signclose)
         signclosebutton[0].click()
+
+    def validSignUpbuttonclick(self, firstname, lastname, email, password):
+        self.clickonSignUp(firstname, lastname, email, password)
+        self.driver.implicitly_wait(2)
+

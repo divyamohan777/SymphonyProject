@@ -4,8 +4,13 @@ ValidLogin:
 InvalidLogin:
   InvalidUserName : 'abc@abc123.com'
   InvalidPassword : 'abc'
-
-FirstName: 'abc'
-LastName: 'abc'
-SignUpexisitingEmail: 'divyamohan88@gmail.com'
-Password: 'Pa55w@rd'
+InvalidSignUp:
+  FirstName: 'abc'
+  LastName: 'abc'
+  SignUpexisitingEmail: 'divyamohan88@gmail.com'
+  Password: 'Pa55w@rd'
+validSignUp:
+  FirstName: 'ABC'
+  LastName: 'XYZ'
+  SignUpEmail: 'abcefg@nodomain.com'
+  Password: 'Pa55w@rd'

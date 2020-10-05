@@ -4,3 +4,4 @@ class errorMessages():
     emptyloginerrorMessage = "All fields are required."
     invalidSignUpMessage = "This email address is already in use. Please try signing in."
     captchaError = "Your computer or network may be sending automated queries. To protect our users, we can't process your request right now. For more details visit our help page"
+    recoverPasswordErrorMessage ="An e-mail address is required."
