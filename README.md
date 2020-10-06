@@ -1,30 +1,21 @@
 # SymphonyProject
-python requirements
-attrs==20.2.0
-certifi==2020.6.20
-chardet==3.0.4
-glob2==0.7
-idna==2.10
-iniconfig==1.0.1
-Mako==1.1.3
-MarkupSafe==1.1.1
-packaging==20.4
-parse==1.18.0
-parse-type==0.5.2
-pluggy==0.13.1
-py==1.9.0
-PyJWT==1.7.1
-pyparsing==2.4.7
+## python requirements
+
 pytest==6.1.0
-pytest-bdd==4.0.1
 pytest-html==2.1.1
 pytest-json-report==1.2.1
-pytest-metadata==1.10.0
 pytz==2020.1
 PyYAML==5.3.1
-requests==2.24.0
 selenium==3.141.0
-six==1.15.0
-toml==0.10.1
 twilio==6.45.4
-urllib3==1.25.10
+
+## run pytest 
+
+```bash
+python -m pytest --html=SymphonyTest_report.html --json-report  SymphonyTest/Main.py
+```
+
+## IDE 
+PyCharm
+
+
