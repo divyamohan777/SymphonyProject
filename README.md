@@ -18,4 +18,12 @@ python -m pytest --html=SymphonyTest_report.html --json-report  SymphonyTest/Mai
 ## IDE 
 PyCharm
 
+## Areas of Improvement
+
+Convert all xpath elements to css elements
+
+## Captcha Validation 
+
+Google Captcha is preventing the validation since its detecting the automated browser session for both audio and image captcha.
+
 
