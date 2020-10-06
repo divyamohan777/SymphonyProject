@@ -9,7 +9,7 @@ PyYAML==5.3.1
 selenium==3.141.0
 twilio==6.45.4
 
-## run pytest 
+## Run pytest 
 
 ```bash
 python -m pytest --html=SymphonyTest_report.html --json-report  SymphonyTest/Main.py
