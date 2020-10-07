@@ -7,14 +7,14 @@ from selenium.webdriver import DesiredCapabilities
 symphonyURL = 'https://my.symphony.com/'
 HOME = os.environ['HOME']
 
-
+#Set up for Chrome
 def gotoSymphonyChrome():
     driver = webdriver.Chrome(HOME + '/PycharmProjects/pythonProject2/SymphonyTest/driver/chromedriver')
     driver.get(symphonyURL)
     driver.maximize_window()
     return driver
 
-
+#Set up for edge
 def gotoSymphonyEdge():
     cap = DesiredCapabilities().EDGE
     cap["platform"] = "ANY"
