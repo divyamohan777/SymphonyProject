@@ -1,6 +1,6 @@
 from twilio.rest import Client
 
-
+#Using Twilio to generate SMS verification code
 def getSMSverificationcode():
     account_sid = "ACb4542fb4dba7479c735ce529076e65e5"
     auth_token = "c4d4880c48b020ae931e6aee54a93734"
