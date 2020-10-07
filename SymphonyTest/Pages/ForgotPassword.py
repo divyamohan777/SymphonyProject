@@ -6,6 +6,7 @@ from selenium.common.exceptions import NoSuchElementException
 
 class ForgotPassword():
 
+    # Fetching Xpaths from Object model 
     def __init__(self, driver):
         self.driver = driver
         self.forgotPassword = forgotPasswordPageObjects.ForgotLinkXpath
@@ -24,6 +25,7 @@ class ForgotPassword():
         ForgotLinkXpathElement = self.driver.find_elements_by_xpath(self.forgotPassword)
         ForgotLinkXpathElement[0].click()
 
+   #Entering captcha for forgot password module     
     def enterCaptchaInfo(self, email):
         self.clickonForgotPassword()
         recoverEmail = self.driver.find_elements_by_xpath(self.recoverEmail)
@@ -41,7 +43,7 @@ class ForgotPassword():
         if self.check_exists_by_xpath():
             captchaError = self.driver.find_elements_by_xpath(self.captchaError)[0].text
             assert captchaError == errorMessages.captchaError
-
+    # method for forgot password with no email address
     def noEmailForgotPassword(self):
         self.clickonForgotPassword()
         recoverEmail = self.driver.find_elements_by_xpath(self.recoverEmail)
