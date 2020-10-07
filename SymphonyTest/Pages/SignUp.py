@@ -4,6 +4,7 @@ from time import sleep
 
 
 class SignUp():
+    #capturing sign up module webelements from page objects
     def __init__(self, driver):
         self.driver = driver
         self.signUpClick = signUpPageObjects.signUplinkXpath
@@ -14,7 +15,7 @@ class SignUp():
         self.activesignUpbutton = signUpPageObjects.activesignUpbuttonXpath
         self.existingSignUperror = signUpPageObjects.signupErrorXpath
         self.signclose = signUpPageObjects.signUpClose
-
+    # Sign up method until email validation 
     def clickonSignUp(self, firstname, lastname, email, password):
         signUpClickElement = self.driver.find_elements_by_xpath(self.signUpClick)
         self.driver.implicitly_wait(2)
@@ -30,7 +31,7 @@ class SignUp():
         signUpPasswordElement[0].send_keys(password)
         activesignUpbutton = self.driver.find_elements_by_xpath(self.activesignUpbutton)
         activesignUpbutton[0].click()
-
+    #exiting sign up method
     def exisitingsignUpbuttonclick(self, firstname, lastname, email, password):
         self.clickonSignUp(firstname, lastname, email, password)
         self.driver.implicitly_wait(2)
